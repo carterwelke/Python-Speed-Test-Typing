@@ -4,8 +4,6 @@ from tkinter import *
 from timeit import default_timer as timer
 import random
 
-import keyboard
-
 # creating window using gui
 window = Tk()
   
@@ -53,7 +51,7 @@ def game():
             acc = Label(window, text = accuracy, font="times 12")
             acc.place(x=250,y=150)
             print("Accuracy:",accuracy)
-            
+
         else:
             print("Wrong Input")
     
@@ -61,8 +59,9 @@ def game():
 
         print("reset")
 
-    words = ['programming', 'coding', 'algorithm',
-             'systems', 'python', 'software']
+    words = ['Quizzical twins proved my hijack-bug fix.', 'Waxy and quivering, jocks fumble the pizza.', 'Sympathizing would fix Quaker objectives.',
+             'Watch “Jeopardy!”, Alex Trebek’s fun TV quiz game.', 'Few black taxis drive up major roads on quiet hazy nights.', 'The quick brown fox jumps over the lazy dog',
+             'Grumpy wizards make toxic brew for the evil queen and jack.', 'A quick movement of the enemy will jeopardize six gunboats.']
   
     # Give random words for testing the speed of user
     word = random.randint(0, (len(words)-1))
@@ -111,7 +110,6 @@ def game():
 
     userAcc = Label(window, text="Accuracy: ", font="times 12")
     userAcc.place(x=180,y=150)
-
 
     window.mainloop()
     
