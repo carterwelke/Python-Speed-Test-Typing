@@ -36,6 +36,7 @@ def game():
             # timeit function
             LIM = 5
             time = end-start
+            time_for_speed = end-start
             time = str(end-start)[:LIM]
             time += "s"
 
@@ -53,6 +54,18 @@ def game():
             acc = Label(window, text = accuracy, font="times 12")
             acc.place(x=250,y=150)
             print("Accuracy:",accuracy)
+
+            wPm = 0
+            numWords = 1
+            for i in range(len(words[word])):
+                if(words[word][i].isspace()):
+                    numWords=numWords+1
+            wPm = time_for_speed / numWords
+            wPm = wPm / 60
+            wPm = str(wPm)[:LIM]
+            speedz = Label(window, text = wPm, font="times 12")
+            speedz.place(x=120,y=170)
+            print("WPM:",wPm)
             
         else:
             print("Wrong Input")
@@ -61,8 +74,8 @@ def game():
 
         print("reset")
 
-    words = ['programming', 'coding', 'algorithm',
-             'systems', 'python', 'software']
+    words = ['programming is a great skill', 'coding is important', 'algorithms are very useful',
+             'systems are going to be the wave', 'python is lame', 'software engineering']
   
     # Give random words for testing the speed of user
     word = random.randint(0, (len(words)-1))
@@ -111,6 +124,9 @@ def game():
 
     userAcc = Label(window, text="Accuracy: ", font="times 12")
     userAcc.place(x=180,y=150)
+
+    wpmSpeed = Label(window, text="Words Per Minute: ", font="times 12")
+    wpmSpeed.place(x=10,y=170)
 
 
     window.mainloop()
