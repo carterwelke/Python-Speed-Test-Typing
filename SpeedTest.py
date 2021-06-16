@@ -24,23 +24,38 @@ def game():
         x = x+1
         '''
     def check_result():
-        if entry.get() == words[word]:
+        if len(entry.get()) == len(words[word]):
   
             # here start time is when the window
             # is opened and end time is when
             # window is destroyed
             end = timer()
-  
+
             # we deduct the start time from end
             # time and calculate results using
             # timeit function
-            LIM = 4
+            LIM = 5
             time = end-start
             time = str(end-start)[:LIM]
             
-            t = Label(window, text=time, font="times 12")
-            t.place(x=100, y=150)
+            speed = Label(window, text=time, font="times 12")
+            speed.place(x=100, y=150)
             print(time)
+
+            numRight = 0
+            for i in range(len(words[word])):
+                if words[word][i] == entry.get()[i]:
+                    numRight += 1
+            accuracy = numRight/(len(words[word]))*100
+            accuracy = str(accuracy)[:LIM]
+            acc = Label(window, text = accuracy, font="times 12")
+            acc.place(x=100,y=250)
+            print("Accuracy:",accuracy)
+
+
+                
+                
+
         else:
             print("Wrong Input")
     
@@ -69,8 +84,8 @@ def game():
     x3.place(x=10, y=50)
 
     def checkInput(var, indx, mode):
-        if entry.get() == words[word]:
-            print("Match!")
+        if len(entry.get()) == len(words[word]):
+            #print("Match!")
             check_result()
     
     inputStr = StringVar()
