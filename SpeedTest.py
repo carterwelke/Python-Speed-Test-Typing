@@ -37,7 +37,8 @@ def game():
             LIM = 5
             time = end-start
             time = str(end-start)[:LIM]
-            
+            time += "s"
+
             speed = Label(window, text=time, font="times 12")
             speed.place(x=100, y=150)
             print(time)
@@ -48,14 +49,11 @@ def game():
                     numRight += 1
             accuracy = numRight/(len(words[word]))*100
             accuracy = str(accuracy)[:LIM]
+            accuracy += "%"
             acc = Label(window, text = accuracy, font="times 12")
-            acc.place(x=100,y=250)
+            acc.place(x=250,y=150)
             print("Accuracy:",accuracy)
-
-
-                
-                
-
+            
         else:
             print("Wrong Input")
     
@@ -110,6 +108,9 @@ def game():
 
     userSpeed = Label(window, text="User Speed: ", font="times 12")
     userSpeed.place(x=10,y=150)
+
+    userAcc = Label(window, text="Accuracy: ", font="times 12")
+    userAcc.place(x=180,y=150)
 
 
     window.mainloop()
