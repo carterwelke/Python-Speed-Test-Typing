@@ -8,7 +8,7 @@ import random
 window = Tk()
   
 # the size of the window is defined
-window.geometry("850x200")
+window.geometry("850x230")
 
 x = 0
   
@@ -122,7 +122,7 @@ def game():
     userSpeed.place(x=10,y=150)
 
     userAcc = Label(window, text="Accuracy: ", font="times 12")
-    userAcc.place(x=180,y=150)
+    userAcc.place(x=10,y=190)
 
     wpmSpeed = Label(window, text="Words Per Minute: ", font="times 12")
     wpmSpeed.place(x=10,y=170)
