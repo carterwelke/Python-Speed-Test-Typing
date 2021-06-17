@@ -8,7 +8,7 @@ import random
 window = Tk()
   
 # the size of the window is defined
-window.geometry("800x200")
+window.geometry("850x200")
 
 x = 0
   
