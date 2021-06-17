@@ -1,4 +1,3 @@
-#test
 # importing all libraries
 from tkinter import *
 from timeit import default_timer as timer
@@ -9,18 +8,9 @@ window = Tk()
   
 # the size of the window is defined
 window.geometry("850x230")
-
-x = 0
   
 # defining the function for the test
 def game():
-    '''
-    global x
-    # defining function for results of test
-    if x != 0:
-        x2.pack_forget()
-        x = x+1
-        '''
     def check_result():
         if len(entry.get()) == len(words[word]):
   
@@ -50,7 +40,7 @@ def game():
             accuracy = str(accuracy)[:LIM]
             accuracy += "%"
             acc = Label(window, text = accuracy, font="times 12")
-            acc.place(x=100,y=190)
+            acc.place(x=80,y=190)
             print("Accuracy:",accuracy)
 
             wPm = 0
@@ -59,22 +49,23 @@ def game():
                 if(words[word][i].isspace()):
                     numWords=numWords+1
             wPm = time_for_speed / numWords
-            wPm = wPm / 60
+            wPm = wPm * 60
             wPm = str(wPm)[:LIM]
             speedz = Label(window, text = wPm, font="times 12")
-            speedz.place(x=120,y=170)
+            speedz.place(x=130,y=170)
             print("WPM:",wPm)
             
         else:
             print("Wrong Input")
-    
-    def reset():
 
-        print("reset")
-
-    words = ['Quizzical twins proved my hijack-bug fix', 'Waxy and quivering, jocks fumble the pizza', 'Sympathizing would fix Quaker objectives',
-             'Watch “Jeopardy!”, Alex Trebek’s fun TV quiz game', 'Few black taxis drive up major roads on quiet hazy nights', 'The quick brown fox jumps over the lazy dog',
-             'Grumpy wizards make toxic brew for the evil queen and jack', 'A quick movement of the enemy will jeopardize six gunboats']
+    words = ['Quizzical twins proved my hijack-bug fix', 
+    'Waxy and quivering, jocks fumble the pizza', 
+    'Sympathizing would fix Quaker objectives',
+    'Watch “Jeopardy!”, Alex Trebek’s fun TV quiz game', 
+    'Few black taxis drive up major roads on quiet hazy nights', 
+    'The quick brown fox jumps over the lazy dog',
+    'Grumpy wizards make toxic brew for the evil queen and jack', 
+    'A quick movement of the enemy will jeopardize six gunboats']
   
     # Give random words for testing the speed of user
     word = random.randint(0, (len(words)-1))
@@ -103,12 +94,7 @@ def game():
     entry.place(x=280, y=55, width = 350)
      
     inputStr.trace_add('write',checkInput)
-    '''
-    # buttons to submit output and check results
-    b2 = Button(window, text="Done",
-                command=check_result, width=12, bg='grey')
-    b2.place(x=150, y=100)
-    '''
+
     def reset():
         x2.destroy()
         entry.destroy()
@@ -130,15 +116,6 @@ def game():
 
     window.mainloop()
     
-
-  
-'''  
-x1 = Label(window, text="Lets start playing..", font="times 20")
-x1.place(x=10, y=50)
-  
-b1 = Button(window, text="Go", command=game, width=12, bg='grey')
-b1.place(x=150, y=100)
-'''
 game()
 # calling window
 #window.mainloop()
