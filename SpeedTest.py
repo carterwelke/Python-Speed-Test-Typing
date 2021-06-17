@@ -50,7 +50,7 @@ def game():
             accuracy = str(accuracy)[:LIM]
             accuracy += "%"
             acc = Label(window, text = accuracy, font="times 12")
-            acc.place(x=250,y=150)
+            acc.place(x=100,y=190)
             print("Accuracy:",accuracy)
 
             wPm = 0
@@ -100,7 +100,7 @@ def game():
     
     inputStr = StringVar()
     entry = Entry(window, textvariable=inputStr)
-    entry.place(x=280, y=55)
+    entry.place(x=280, y=55, width = 350)
      
     inputStr.trace_add('write',checkInput)
     '''
