@@ -72,9 +72,9 @@ def game():
 
         print("reset")
 
-    words = ['Quizzical twins proved my hijack-bug fix.', 'Waxy and quivering, jocks fumble the pizza.', 'Sympathizing would fix Quaker objectives.',
-             'Watch “Jeopardy!”, Alex Trebek’s fun TV quiz game.', 'Few black taxis drive up major roads on quiet hazy nights.', 'The quick brown fox jumps over the lazy dog',
-             'Grumpy wizards make toxic brew for the evil queen and jack.', 'A quick movement of the enemy will jeopardize six gunboats.']
+    words = ['Quizzical twins proved my hijack-bug fix', 'Waxy and quivering, jocks fumble the pizza', 'Sympathizing would fix Quaker objectives',
+             'Watch “Jeopardy!”, Alex Trebek’s fun TV quiz game', 'Few black taxis drive up major roads on quiet hazy nights', 'The quick brown fox jumps over the lazy dog',
+             'Grumpy wizards make toxic brew for the evil queen and jack', 'A quick movement of the enemy will jeopardize six gunboats']
   
     # Give random words for testing the speed of user
     word = random.randint(0, (len(words)-1))
