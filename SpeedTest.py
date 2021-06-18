@@ -11,12 +11,7 @@ class Title(Frame):
         self.make_widgets()
 
     def make_widgets(self):
-        # don't assume that self.parent is a root window.
-        # instead, call `winfo_toplevel to get the root window
         self.winfo_toplevel().title("Typing Speed Game")
-
-        # this adds something to the frame, otherwise the default
-        # size of the window will be very small
         label = Entry(self)
         label.pack(side="top", fill="x")
 
