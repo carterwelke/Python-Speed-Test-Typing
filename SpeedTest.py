@@ -32,55 +32,51 @@ start = 0.0
 # defining the function for the test
 def game():
     global start
-    def check_result():
-        if len(entry.get()) == len(words[word]):
-  
-            # here start time is when the window
-            # is opened and end time is when
-            # window is destroyed
-            print("stopping timer!")
-            end = timer()
-
-            # we deduct the start time from end
-            # time and calculate results using
-            # timeit function
-            LIM = 5
-            time = end-start
-            time_for_speed = end-start
-            time = str(end-start)[:LIM]
-            time += "s"
+    def check_result():  
+        # here start time is when the window
+        # is opened and end time is when
+        # window is destroyed
+        print("stopping timer!")
+        end = timer()
+    
+        # we deduct the start time from end
+        # time and calculate results using
+        # timeit function
+        LIM = 5
+        time = end-start
+        time_for_speed = end-start
+        time = str(end-start)[:LIM]
+        time += "s"
             
-            #calculate speed and place in window
-            speed = Label(window, text=time, font="times 12")
-            speed.place(x=100, y=150)
-            print("Time:",time)
+        #calculate speed and place in window
+        speed = Label(window, text=time, font="times 12")
+        speed.place(x=100, y=150)
+        print("Time:",time)
 
-            #calculate accuracy and place in window
-            numRight = 0
-            for i in range(len(words[word])):
-                if words[word][i] == entry.get()[i]:
-                    numRight += 1
-            accuracy = numRight/(len(words[word]))*100
-            accuracy = str(accuracy)[:LIM]
-            accuracy += "%"
-            acc = Label(window, text = accuracy, font="times 12")
-            acc.place(x=80,y=190)
-            print("Accuracy:",accuracy)
+        #calculate accuracy and place in window
+        numRight = 0
+        for i in range(len(words[word])):
+            if words[word][i] == entry.get()[i]:
+                numRight += 1
+        accuracy = numRight/(len(words[word]))*100
+        accuracy = str(accuracy)[:LIM]
+        accuracy += "%"
+        acc = Label(window, text = accuracy, font="times 12")
+        acc.place(x=80,y=190)
+        print("Accuracy:",accuracy)
 
-            #calculate WPM and place in window
-            wPm = 0
-            numWords = 1
-            for i in range(len(words[word])):
-                if(words[word][i].isspace()):
-                    numWords=numWords+1
-            wPm = time_for_speed / numWords
-            wPm = wPm * 60
-            wPm = str(wPm)[:LIM]
-            speedz = Label(window, text = wPm, font="times 12")
-            speedz.place(x=130,y=170)
-            print("WPM:",wPm)
-        else:
-            print("Wrong Input")
+        #calculate WPM and place in window
+        wPm = 0
+        numWords = 1
+        for i in range(len(words[word])):
+            if(words[word][i].isspace()):
+                numWords=numWords+1
+        wPm = time_for_speed / numWords
+        wPm = wPm * 60
+        wPm = str(wPm)[:LIM]
+        speedz = Label(window, text = wPm, font="times 12")
+        speedz.place(x=130,y=170)
+        print("WPM:",wPm)
 
     #reset game, reset sentence and text input
     def reset():
